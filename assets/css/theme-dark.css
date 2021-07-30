@@ -1,0 +1,16 @@
+html.dark-theme > body {
+  background: black;
+  color: lightgrey;
+}
+@media (max-width: 400px) {
+  html.dark-theme > body {
+    color: #edb;
+  }
+}
+
+html.dark-theme > body a { color: #c33 }
+
+html.dark-theme > body .previous-versions,
+html.dark-theme > body .previous-versions a {
+  color: #543;
+}
