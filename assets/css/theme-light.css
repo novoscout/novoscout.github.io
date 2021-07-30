@@ -1,0 +1,10 @@
+body {
+  background: #fefdfc;
+  color: #444;
+}
+
+a { color: #09c }
+
+.previous-versions, .previous-versions a {
+  color: #aaa;
+}
