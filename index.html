@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- Disable 300ms delay in Chrome and Firefox -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Polyfill.io: automatic polyfills for many features/browsers -->
+    <script>
+      if (navigator) {
+        if (navigator.onLine) {
+          var p = document.createElement('script');
+          p.src = "//polyfill.io/v3/polyfill.min.js?flags=gated&features=default";
+          p.async = true;
+          p.defer = true;
+          p.setAttribute('crossorigin','anonymous')
+          document.head.appendChild(p);
+        }
+      }
+    </script>
+
+    <!-- HTML5shiv: HTML5 elements for older versions of IE -->
+    <!-- respond.js: media-queries for older versions of IE -->
+    <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js" integrity="sha512-RCtZMoZSQ5csGk1zBPGImR8OY+NJfe0IsaFrDD649yYrSBgCf3kYiP79AfWT9/idKbpWYteQmswChxbXC7YHig==" crossorigin="anon>
+    <![endif]-->
+
+    <style>${BASE_CSS}</style>
+
+    <!--
+    <link rel="preload" href="/assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/styles.css"></noscript>
+    -->
+
+    <link rel="preload" href="/assets/css/theme-dark.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/theme-dark.css"></noscript>
+
+    <link rel="preload" href="/assets/css/theme-light.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/theme-light.css"></noscript>
+
+    <meta name="description" content="novoscout">
+    <meta name="og:description" content="novoscout">
+    <meta name="og:title" content="novoscout">
+    <meta name="og:site_name" content="novoscout">
+
+    <meta name="author" content="novoscout">
+
+    <meta name="og:locale" content="en_GB">
+
+    <link rel="canonical" href="//novoscout.com">
+    <meta name="og:url" content="https://novoscout.com">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@novoscout">
+    <meta name="twitter:creator" content="@novoscout">
+
+    <meta name="theme-color" content="#0ad">
+
+    <title>novoscout</title>
+
+    <script src="/assets/js/storage.min.js"></script>
+    <script>
+      const htmlElem = document.getElementsByTagName("html")[0];
+      const currentTheme = storage.getItem("theme") ? storage.getItem("theme") : null;
+      if (currentTheme == "dark") {
+        htmlElem.classList.add("dark-theme");
+      } else {
+        htmlElem.classList.remove("dark-theme");
+      }
+      function toggleTheme() {
+        let theme = htmlElem.classList.contains("dark-theme") ? "light" : "dark";
+        storage.setItem("theme",theme);
+        if (theme == "dark") {
+          htmlElem.classList.add("dark-theme");
+        } else {
+          htmlElem.classList.remove("dark-theme");
+        }
+      }
+    </script>
+
+  </head>
+  <body>
+    <div class="page-wrapper">
+
+    <div class="grid">
+      <div class="col">
+        <h1 id="site-title">novoscout</h1>
+      </div>
+      <div class="col" style="display:flex;align-items:center">
+        <div id="nav">
+          <ul id="nav-menu">
+            <li class="nav-menu-item">
+              <a style="text-decoration:none" href="#" onclick="toggleTheme()"><span role="img" aria-label="Toggle theme">🌗</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <div class="grid" style="margin-top: 2rem">
+        <div class="col">
+          <p></p>
+        </div>
+      </div>
+      <footer id="nav-footer" class="page-footer"></footer>
+    </div>
+  </body>
+</html>
